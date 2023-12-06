@@ -1,4 +1,4 @@
-package entities;
+package com.contato.aula1611.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package controller;
+package com.contato.aula1611.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import repository.LocalRepository;
-import entities.Local;
+import com.contato.aula1611.entities.Local;
+import com.contato.aula1611.repository.LocalRepository;
 
 @RestController
 @RequestMapping(value = "/locais")

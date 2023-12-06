@@ -1,4 +1,4 @@
-package controller;
+package com.contato.aula1611.controller;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import repository.CompromissoRepository;
-import entities.Compromisso;
+import com.contato.aula1611.entities.Compromisso;
+import com.contato.aula1611.repository.CompromissoRepository;
 
 @RestController
 @RequestMapping(value = "/compromisso")
