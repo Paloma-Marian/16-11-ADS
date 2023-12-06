@@ -6,33 +6,33 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "tb_compromisso")
+@Table (name = "tb_compromissos")
 public class Compromisso {
 	
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToOne
-	@JoinColumn(name = "local_id")
-	private Local local;
-	
-	@OneToOne
-	@JoinColumn(name = "contato_id")
-	private Contato contato;
-	
 	@Column(length = 50, nullable = false)
 	private String data;
 	
 	@Column(length = 50, nullable = false)
-	private Double hora;
+	private String hora;
 	
 	@Column(length = 1, nullable = false)
-	private byte status;
+	private String status;
+	
+	@ManyToOne
+	@JoinColumn(name = "local_id")
+	private Local local;
+	
+	@ManyToOne
+	@JoinColumn(name = "contato_id")
+	private Contato contato;
 	
 	public Compromisso(){
 		
@@ -70,23 +70,23 @@ public class Compromisso {
 		this.data = data;
 	}
 
-	public Double getHora() {
+	public String getHora() {
 		return hora;
 	}
 
-	public void setHora(Double hora) {
+	public void setHora(String hora) {
 		this.hora = hora;
 	}
 
-	public byte getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(byte status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public Compromisso(Long id, Local local, Contato contato, String data, Double hora, byte status) {
+	public Compromisso(Long id, Local local, Contato contato, String data, String hora, String status) {
 		super();
 		this.id = id;
 		this.local = local;
