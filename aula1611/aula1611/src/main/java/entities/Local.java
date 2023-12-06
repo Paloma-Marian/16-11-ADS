@@ -26,6 +26,10 @@ public class Local {
 	@Column(length = 9, nullable = false)	
 	private String cep;
 	
+	public Local() {
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}

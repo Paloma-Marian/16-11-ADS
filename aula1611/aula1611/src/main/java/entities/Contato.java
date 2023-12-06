@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
@@ -19,8 +21,9 @@ public class Contato {
 	@Column(length = 100, nullable = false)
 	private String email;
 	
-	@Transient
-	private String observacao;
+	public Contato() {
+		
+	}
 	
 	public Long getId() {
 		return id;
@@ -46,9 +49,5 @@ public class Contato {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
-	}
-	
-	public Contato() {
-		
 	}
 }

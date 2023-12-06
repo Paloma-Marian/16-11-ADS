@@ -19,7 +19,7 @@ import repository.LocalRepository;
 import entities.Local;
 
 @RestController
-@RequestMapping("/locais")
+@RequestMapping(value = "/locais")
 public class LocalController {
 	@Autowired
 	LocalRepository repositorio;

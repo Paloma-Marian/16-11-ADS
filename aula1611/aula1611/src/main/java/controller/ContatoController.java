@@ -19,7 +19,7 @@ import entities.Contato;
 import repository.ContatoRepository;
 
 @RestController
-@RequestMapping("/contatos")
+@RequestMapping(value = "/contatos")
 public class ContatoController {
 	@Autowired
 	ContatoRepository repositorio;
