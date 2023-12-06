@@ -30,16 +30,23 @@ public class LocalController {
 	}
 	
 	@PostMapping()
-	public ResponseEntity<Local> inserirlocal(@RequestBody Local local){
+	public ResponseEntity<Local> inserirLocal(@RequestBody Local local){
 		Local localaux = repositorio.save(local);
 		return ResponseEntity.status(HttpStatus.CREATED).body(localaux);
 	}
 	
 	@PutMapping("/{idlocal}")
-	public ResponseEntity<Local> alterarLocal(@PathVariable("idlocal")Long idcontato, @RequestBody Local local){
-		Optional<Local> optionalLocal = repositorio.findById(idcontato);
+	public ResponseEntity<Local> alterarLocal(@PathVariable("idlocal")Long idlocal, @RequestBody Local local){
+		Optional<Local> optionalLocal = repositorio.findById(idlocal);
 		try {
 			Local localaux = optionalLocal.get();
+			localaux.setNome(local.getNome());
+			localaux.setRua(local.getRua());
+			localaux.setNumero(local.getNumero());
+			localaux.setBairro(local.getBairro());
+			localaux.setCep(local.getCep());
+			localaux.setCidade(local.getCidade());
+			repositorio.save(localaux);
 			return ResponseEntity.status(HttpStatus.OK).body(localaux);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); 
