@@ -25,8 +25,8 @@ public class Compromisso {
 	@Column(length = 50, nullable = false)
 	private String hora;
 	
-	@Column(length = 1, nullable = false)
-	private Status status;
+	@Column(length = 50, nullable = false)
+	private String status;
 	
 	@ManyToOne
 	@JoinColumn(name = "local_id")
@@ -35,10 +35,6 @@ public class Compromisso {
 	@ManyToOne
 	@JoinColumn(name = "contato_id")
 	private Contato contato;
-	
-	public enum Status {
-	    ATIVO, CANCELADO
-	}
 	
 	public Compromisso(){
 		
@@ -84,15 +80,15 @@ public class Compromisso {
 		this.hora = hora;
 	}
 
-	public Status getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public Compromisso(Long id, Local local, Contato contato, LocalDate data, String hora, Status status) {
+	public Compromisso(Long id, Local local, Contato contato, LocalDate data, String hora, String status) {
 		super();
 		this.id = id;
 		this.local = local;

@@ -17,6 +17,6 @@ public interface CompromissoRepository extends JpaRepository<Compromisso, Long> 
 	@Query("SELECT comp FROM Compromisso comp WHERE comp.local = :local AND comp.contato = :contato")
     List<Compromisso> getFiltraCompromisso(@Param("local") Local local,@Param("contato") Contato contato);
 	
-	@Query("SELECT c FROM Compromisso c WHERE c.data BETWEEN :data_inicial AND :data_final")
-    List<Compromisso> getFiltrarCompromissoPorData(@Param("data_inicial") LocalDate data_inicial, @Param("data_final") LocalDate data_final);
+	@Query("SELECT comp FROM Compromisso comp WHERE comp.data BETWEEN :inicial AND :fim")
+    List<Compromisso> getFiltrarCompromissoPorData(@Param("inicial") LocalDate inicial, @Param("fim") LocalDate fim);
 }

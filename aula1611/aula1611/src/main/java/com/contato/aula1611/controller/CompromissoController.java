@@ -10,13 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.contato.aula1611.entities.Compromisso;
-import com.contato.aula1611.entities.Compromisso.Status;
 import com.contato.aula1611.entities.Contato;
 import com.contato.aula1611.entities.Local;
 import com.contato.aula1611.repository.CompromissoRepository;
@@ -49,9 +49,9 @@ public class CompromissoController {
         return null;
 	}
 	
+	@PostMapping
 	public ResponseEntity<Compromisso> inserirCompromisso(@RequestBody Compromisso compromisso){
 		Compromisso compromissoaux = repositorio.save(compromisso);
-		compromissoaux.setStatus(Status.ATIVO);
 		return ResponseEntity.status(HttpStatus.CREATED).body(compromissoaux);
 	}
 	
@@ -96,16 +96,17 @@ public class CompromissoController {
         return null;
     }
     
-    @GetMapping("/data/{data_inicil}/{data_final}")
-    public List<Compromisso> getCompromissoPorData(@PathVariable("data_inicial") LocalDate data_inicial, @PathVariable("data_final") LocalDate data_final) {
-        return repositorio.getFiltrarCompromissoPorData(data_inicial, data_final);
+    @GetMapping("/data/{inicial}/{fim}")
+    public List<Compromisso> getCompromissoPorData(@PathVariable("inicial") LocalDate inicial, 
+    		@PathVariable("fim") LocalDate fim) {
+        return repositorio.getFiltrarCompromissoPorData(inicial, fim);
     }
     
-    @PutMapping("/calcelar/{id}")
+    @PutMapping("/cancelar/{id}")
     public Compromisso cancelarCompromisso(@PathVariable("id") long id) {
     	Compromisso compromissoaux = getBuscaCompromisso(id);
         if (compromissoaux != null) {
-            compromissoaux.setStatus(Status.CANCELADO);
+            compromissoaux.setStatus("CANCELADO");
             return repositorio.save(compromissoaux);
         }
         return null;
