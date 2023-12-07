@@ -1,5 +1,7 @@
 package com.contato.aula1611.entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +20,7 @@ public class Compromisso {
 	private Long id;
 	
 	@Column(length = 50, nullable = false)
-	private String data;
+	private LocalDate data;
 	
 	@Column(length = 50, nullable = false)
 	private String hora;
@@ -62,11 +64,11 @@ public class Compromisso {
 		this.contato = contato;
 	}
 
-	public String getData() {
+	public LocalDate getData() {
 		return data;
 	}
 
-	public void setData(String data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 
@@ -86,7 +88,7 @@ public class Compromisso {
 		this.status = status;
 	}
 
-	public Compromisso(Long id, Local local, Contato contato, String data, String hora, String status) {
+	public Compromisso(Long id, Local local, Contato contato, LocalDate data, String hora, String status) {
 		super();
 		this.id = id;
 		this.local = local;

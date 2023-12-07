@@ -50,7 +50,7 @@ public class ContatoController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Contato> getInserirContato(@PathVariable("id") long id) {
+	public ResponseEntity<Contato> getBuscaContato(@PathVariable("id") long id) {
 		Optional<Contato> opContato = repositorio.findById(id);
 		try {
 			Contato contatoaux = opContato.get();		
