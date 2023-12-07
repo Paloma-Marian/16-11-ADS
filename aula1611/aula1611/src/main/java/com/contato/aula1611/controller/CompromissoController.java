@@ -88,14 +88,19 @@ public class CompromissoController {
 		}
 	}
 	
-    @GetMapping("/{local_id}/{contato_id}/{dataInicial}/{dataFinal}")
+    @GetMapping("/{local_id}/{contato_id}")
     public List<Compromisso> getFiltraCompromisso(@PathVariable("local_id") long idLocal, 
-    		@PathVariable("contato_id") long idContato, @PathVariable("dataInicial") LocalDate inicial_id, @PathVariable("dataFinal") LocalDate final_id) {
+    		@PathVariable("contato_id") long idContato) {
     	Optional<Local> local = localRepositorio.findById(idLocal);
     	Optional<Contato> contato = contatoRepositorio.findById(idContato);
         if (local.isPresent()) {
-            return repositorio.getFiltraCompromisso(local.get(),contato.get(), inicial_id, final_id);
+            return repositorio.getFiltraCompromisso(local.get(),contato.get());
         }
         return null;
+    }
+    
+    @GetMapping("/data/{data_inicil}/{data_final}")
+    public List<Compromisso> getCompromissoPorData(@PathVariable("data_inicial") LocalDate data_inicial, @PathVariable("data_final") LocalDate data_final) {
+        return repositorio.getFiltrarCompromissoPorData(data_inicial, data_final);
     }
 }

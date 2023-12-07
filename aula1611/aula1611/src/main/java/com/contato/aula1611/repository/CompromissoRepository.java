@@ -14,6 +14,9 @@ import com.contato.aula1611.entities.Local;
 
 @Repository
 public interface CompromissoRepository extends JpaRepository<Compromisso, Long> {
-	@Query("SELECT comp FROM Compromisso comp WHERE comp.local = :local AND comp.contato = :contato AND comp.data BETWEEN :dataInicial AND :dataFinal")
-    List<Compromisso> getFiltraCompromisso(@Param("local") Local local,@Param("contato") Contato contato,@Param("dataFinal") LocalDate dataInicial, @Param("dataFinal") LocalDate dataFinal);
+	@Query("SELECT comp FROM Compromisso comp WHERE comp.local = :local AND comp.contato = :contato")
+    List<Compromisso> getFiltraCompromisso(@Param("local") Local local,@Param("contato") Contato contato);
+	
+	@Query("SELECT c FROM Compromisso c WHERE c.data BETWEEN :data_inicial AND :data_final")
+    List<Compromisso> getFiltrarCompromissoPorData(@Param("data_inicial") LocalDate data_inicial, @Param("data_final") LocalDate data_final);
 }
