@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "255ba0cd-15a3-4263-b27d-af2c2f6abaf4",
+		"name": "Aula1611",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16069109"
+	},
+	"item": [
+		{
+			"name": "Contatos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contatos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contatos ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contatos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Contato",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"mario\",\r\n    \"email\": \"mario@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contatos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Contatos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contatos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Novo Contato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"paloma\",\r\n    \"email\": \"paloma@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contatos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/locais",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"locais"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/locais/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"locais",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Local",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Casa\",\r\n    \"rua\": \"Carlos Schmidt\",\r\n    \"numero\": \"196\",\r\n    \"bairro\": \"Progresso\",\r\n    \"cidade\": \"Blumenau\",\r\n    \"cep\": \"89026-620\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/locais/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"locais",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Local",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/locais/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"locais",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Novo Local",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Teste\",\r\n    \"rua\": \"Carlos Schmidt\",\r\n    \"numero\": \"196\",\r\n    \"bairro\": \"Progresso\",\r\n    \"cidade\": \"Blumenau\",\r\n    \"cep\": \"89026-620\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/locais",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"locais"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compromisso",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/compromisso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compromisso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compromisso ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/compromisso/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compromisso",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Compromisso",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"data\": \"09/12/2023\",\r\n    \"hora\": \"0.5\",\r\n    \"status\": \"A\",\r\n    \"local\": {\r\n        \"id\": 1,\r\n        \"nome\": \"Casa\",\r\n        \"rua\": \"Carlos Schmidt\",\r\n        \"numero\": \"196\",\r\n        \"bairro\": \"Progresso\",\r\n        \"cidade\": \"Blumenau\",\r\n        \"cep\": \"89026-620\"\r\n    },\r\n    \"contato\": {\r\n        \"id\": 1,\r\n        \"nome\": \"mario\",\r\n        \"email\": \"mario@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compromisso/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compromisso",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Compromisso",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/compromisso/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compromisso",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Novo Compromisso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"2023-12-06\",\r\n    \"hora\": \"0.5\",\r\n    \"status\": \"ATIVO\",\r\n    \"local\": {\r\n        \"id\": 1,\r\n        \"nome\": \"Casa1\",\r\n        \"rua\": \"Carlos Schmidt1\",\r\n        \"numero\": \"196\",\r\n        \"bairro\": \"Progresso\",\r\n        \"cidade\": \"Blumenau1\",\r\n        \"cep\": \"89026-620\"\r\n    },\r\n    \"contato\": {\r\n        \"id\": 1,\r\n        \"nome\": \"maria\",\r\n        \"email\": \"maria@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compromisso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compromisso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar Compromisso",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"06/12/2023\",\r\n    \"hora\": \"0.5\",\r\n    \"status\": \"A\",\r\n    \"local\": {\r\n        \"id\": 1,\r\n        \"nome\": \"Casa1\",\r\n        \"rua\": \"Carlos Schmidt1\",\r\n        \"numero\": \"196\",\r\n        \"bairro\": \"Progresso\",\r\n        \"cidade\": \"Blumenau1\",\r\n        \"cep\": \"89026-620\"\r\n    },\r\n    \"contato\": {\r\n        \"id\": 1,\r\n        \"nome\": \"maria\",\r\n        \"email\": \"maria@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compromisso/2/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compromisso",
+						"2",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compromisso Filtrar por data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"06/12/2023\",\r\n    \"hora\": \"0.5\",\r\n    \"status\": \"A\",\r\n    \"local\": {\r\n        \"id\": 1,\r\n        \"nome\": \"Casa1\",\r\n        \"rua\": \"Carlos Schmidt1\",\r\n        \"numero\": \"196\",\r\n        \"bairro\": \"Progresso\",\r\n        \"cidade\": \"Blumenau1\",\r\n        \"cep\": \"89026-620\"\r\n    },\r\n    \"contato\": {\r\n        \"id\": 1,\r\n        \"nome\": \"maria\",\r\n        \"email\": \"maria@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compromisso/data/2023-12-05/2023-12-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compromisso",
+						"data",
+						"2023-12-05",
+						"2023-12-08"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compromisso Cancelar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"06/12/2023\",\r\n    \"hora\": \"0.5\",\r\n    \"status\": \"A\",\r\n    \"local\": {\r\n        \"id\": 1,\r\n        \"nome\": \"Casa1\",\r\n        \"rua\": \"Carlos Schmidt1\",\r\n        \"numero\": \"196\",\r\n        \"bairro\": \"Progresso\",\r\n        \"cidade\": \"Blumenau1\",\r\n        \"cep\": \"89026-620\"\r\n    },\r\n    \"contato\": {\r\n        \"id\": 1,\r\n        \"nome\": \"maria\",\r\n        \"email\": \"maria@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compromisso/cancelar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compromisso",
+						"cancelar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
